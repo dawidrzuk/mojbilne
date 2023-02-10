@@ -19,5 +19,6 @@ class MainActivity : AppCompatActivity() {
         val sb2dlug = findViewById<SeekBar>(R.id.seekBar6)
         val sb3dlug = findViewById<SeekBar>(R.id.seekBar7)
 
+        var sb1szerr = sb1szer.progress
     }
 }
