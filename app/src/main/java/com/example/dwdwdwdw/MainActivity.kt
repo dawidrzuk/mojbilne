@@ -20,8 +20,8 @@ class MainActivity : AppCompatActivity() {
         val sb1dlug = findViewById<SeekBar>(R.id.seekBar5)
         val sb2dlug = findViewById<SeekBar>(R.id.seekBar6)
         val sb3dlug = findViewById<SeekBar>(R.id.seekBar7)
-        val pb1 = findViewById<ProgressBar>(R.id.progressBar)
-        val pb2 = findViewById<ProgressBar>(R.id.progressBar2)
+        val pb2 = findViewById<ProgressBar>(R.id.progressBar)
+        val pb1 = findViewById<ProgressBar>(R.id.progressBar2)
 
         val but = findViewById<Button>(R.id.button)
 
@@ -34,5 +34,21 @@ class MainActivity : AppCompatActivity() {
             sb2szer.progress = 100
             sb3szer.progress = 100
         }
-    }
-}
+
+            fun ChangeProgressBarValueVertical(seekbar1: SeekBar, progressBar: ProgressBar){
+                progressBar.progress = (seekbar1.progress);
+            }
+            sb1dlug.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
+                override fun onProgressChanged(seekBar: SeekBar, progress: Int, fromUser: Boolean) {
+                    obraz1.scaleY = progress / 100f
+
+                    ChangeProgressBarValueVertical(sb1dlug, pb1)
+                }
+
+                override fun onStartTrackingTouch(p0: SeekBar) {}
+                override fun onStopTrackingTouch(p0: SeekBar) {}
+            })
+
+        }
+
+        }
