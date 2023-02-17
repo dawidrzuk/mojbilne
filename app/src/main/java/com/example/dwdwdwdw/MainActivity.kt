@@ -6,6 +6,7 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.ProgressBar
 import android.widget.SeekBar
+import android.widget.TextView
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -22,7 +23,8 @@ class MainActivity : AppCompatActivity() {
         val sb3dlug = findViewById<SeekBar>(R.id.seekBar7)
         val pb2 = findViewById<ProgressBar>(R.id.progressBar)
         val pb1 = findViewById<ProgressBar>(R.id.progressBar2)
-
+        val textv = findViewById<TextView>(R.id.textView)
+        val textv2 = findViewById<TextView>(R.id.textView2)
         val but = findViewById<Button>(R.id.button)
 
         but.setOnClickListener {
@@ -37,7 +39,12 @@ class MainActivity : AppCompatActivity() {
 
             fun ChangeProgressBarValueVertical(seekbar1: SeekBar, progressBar: ProgressBar){
                 progressBar.progress = (seekbar1.progress);
+                textv.text = progressBar.progress.toString() + "%";
             }
+        fun ChangeProgressBarValueHorizontal(seekbar1: SeekBar, progressBar: ProgressBar){
+            progressBar.progress = (seekbar1.progress);
+            textv2.text = progressBar.progress.toString() + "%";
+        }
             sb1dlug.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
                 override fun onProgressChanged(seekBar: SeekBar, progress: Int, fromUser: Boolean) {
                     obraz1.scaleY = progress / 100f
@@ -71,14 +78,11 @@ class MainActivity : AppCompatActivity() {
             override fun onStopTrackingTouch(p0: SeekBar) {}
 
         })
-        fun ChangeProgressBarValueHorizontal(seekbar1: SeekBar, progressBar: ProgressBar){
-            progressBar.progress = (seekbar1.progress);
-        }
         sb1szer.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
             override fun onProgressChanged(seekBar: SeekBar, progress: Int, fromUser: Boolean) {
                 obraz1.scaleX = progress / 100f
 
-                ChangeProgressBarValueVertical(sb1szer, pb2)
+                ChangeProgressBarValueHorizontal(sb1szer, pb2)
             }
 
             override fun onStartTrackingTouch(p0: SeekBar) {}
@@ -89,7 +93,7 @@ class MainActivity : AppCompatActivity() {
             override fun onProgressChanged(seekBar: SeekBar, progress: Int, fromUser: Boolean) {
                 obraz2.scaleX = progress / 100f
 
-                ChangeProgressBarValueVertical(sb2szer, pb2)
+                ChangeProgressBarValueHorizontal(sb2szer, pb2)
             }
 
             override fun onStartTrackingTouch(p0: SeekBar) {}
@@ -100,7 +104,7 @@ class MainActivity : AppCompatActivity() {
             override fun onProgressChanged(seekBar: SeekBar, progress: Int, fromUser: Boolean) {
                 obraz3.scaleX = progress / 100f
 
-                ChangeProgressBarValueVertical(sb3szer, pb2)
+                ChangeProgressBarValueHorizontal(sb3szer, pb2)
             }
 
             override fun onStartTrackingTouch(p0: SeekBar) {}
