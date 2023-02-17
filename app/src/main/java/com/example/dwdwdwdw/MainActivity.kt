@@ -49,7 +49,28 @@ class MainActivity : AppCompatActivity() {
                 override fun onStopTrackingTouch(p0: SeekBar) {}
 
             })
+        sb2dlug.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
+            override fun onProgressChanged(seekBar: SeekBar, progress: Int, fromUser: Boolean) {
+                obraz2.scaleY = progress / 100f
 
+                ChangeProgressBarValueVertical(sb2dlug, pb1)
+            }
+
+            override fun onStartTrackingTouch(p0: SeekBar) {}
+            override fun onStopTrackingTouch(p0: SeekBar) {}
+
+        })
+        sb3dlug.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
+            override fun onProgressChanged(seekBar: SeekBar, progress: Int, fromUser: Boolean) {
+                obraz3.scaleY = progress / 100f
+
+                ChangeProgressBarValueVertical(sb3dlug, pb1)
+            }
+
+            override fun onStartTrackingTouch(p0: SeekBar) {}
+            override fun onStopTrackingTouch(p0: SeekBar) {}
+
+        })
         }
 
         }
