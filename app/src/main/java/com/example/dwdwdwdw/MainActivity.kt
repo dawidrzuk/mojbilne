@@ -2,7 +2,9 @@ package com.example.dwdwdwdw
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Button
 import android.widget.ImageView
+import android.widget.ProgressBar
 import android.widget.SeekBar
 
 class MainActivity : AppCompatActivity() {
@@ -18,7 +20,19 @@ class MainActivity : AppCompatActivity() {
         val sb1dlug = findViewById<SeekBar>(R.id.seekBar5)
         val sb2dlug = findViewById<SeekBar>(R.id.seekBar6)
         val sb3dlug = findViewById<SeekBar>(R.id.seekBar7)
+        val pb1 = findViewById<ProgressBar>(R.id.progressBar)
+        val pb2 = findViewById<ProgressBar>(R.id.progressBar2)
 
-        var sb1szerr = sb1szer.progress
+        val but = findViewById<Button>(R.id.button)
+
+        but.setOnClickListener {
+            sb1dlug.progress = 100
+            sb2dlug.progress = 100
+            sb3dlug.progress = 100
+
+            sb1szer.progress = 100
+            sb2szer.progress = 100
+            sb3szer.progress = 100
+        }
     }
 }
