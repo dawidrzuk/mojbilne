@@ -71,6 +71,20 @@ class MainActivity : AppCompatActivity() {
             override fun onStopTrackingTouch(p0: SeekBar) {}
 
         })
+        fun ChangeProgressBarValueHorizontal(seekbar1: SeekBar, progressBar: ProgressBar){
+            progressBar.progress = (seekbar1.progress);
+        }
+        sb1szer.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
+            override fun onProgressChanged(seekBar: SeekBar, progress: Int, fromUser: Boolean) {
+                obraz1.scaleX = progress / 100f
+
+                ChangeProgressBarValueVertical(sb1szer, pb2)
+            }
+
+            override fun onStartTrackingTouch(p0: SeekBar) {}
+            override fun onStopTrackingTouch(p0: SeekBar) {}
+
+        })
         }
 
         }
