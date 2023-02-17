@@ -47,6 +47,7 @@ class MainActivity : AppCompatActivity() {
 
                 override fun onStartTrackingTouch(p0: SeekBar) {}
                 override fun onStopTrackingTouch(p0: SeekBar) {}
+
             })
 
         }
